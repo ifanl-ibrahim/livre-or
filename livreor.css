@@ -1,0 +1,178 @@
+body{
+    background-image: url(./images/fond_livre.jpg);
+    background-size: cover;}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    height: 65vh;
+}
+
+/*** Connexion ***/
+
+table{
+    display: inline-block;}
+
+form {
+    width: 80vh;
+    color:white;
+    border-radius: 10vh;
+    background-color: rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+/* inputs */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;}
+
+/* style des buttons */
+
+input[type=submit] {
+    background-color: skyblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 50vh;}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: skyblue;
+    border: 1px solid darkblue;}
+
+/*** Connexion ***/
+
+/*** Navigateur ***/
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 85px;
+    margin: 0;
+    flex-wrap: wrap;
+    background-color: rgba(105, 97, 97, 0.623)  ;
+    box-shadow: 5px 5px 5px black;
+    list-style-type: none;}
+
+ul{
+    display: flex;
+    align-items: center;}
+
+li {
+    float: right;
+    padding-left: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    list-style: none;}
+
+#logo-navbar{
+    width: 8vh;
+    height: auto;}
+
+li a {
+    display: block;
+    align-items: center;
+    color: rgb(0, 183, 255);
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;}
+
+/*** Navigateur ***/
+
+/*** Message ***/
+
+#erreur {
+    border: 10px;
+    background-color: red;
+    color: white ;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    height: 4vh;
+    margin-left: 81vh;}
+
+/*** Message ***/
+
+/*** titre ***/
+
+.titre_user{
+    text-shadow: 2vh 1vh 0.5vh rgb(105, 185, 185);
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;}
+
+#bienvenue{
+    width:55vh;
+    padding: 5vh;
+    border: 1vh solid rgb(67, 161, 173);
+    margin: auto;
+    background: whitesmoke;
+    text-align: center;
+    margin-top: 5vh;}
+
+/*** titre ***/
+
+/*** mobil ***/
+@media screen and (min-width: 812px) {
+    
+.drop {
+    display: none;}
+}
+
+@media screen and (max-width: 813px) {
+
+/* acceuil */
+main img{
+    height: 40vh;}
+
+/* menu */
+.nav {
+    display: none;}
+
+.dropbutton {
+  background-color: skyblue;
+  padding: 2vh;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-top: 2vh;}
+
+  .dropbutton:hover{
+    float: right;
+}
+.drop {
+  position: relative;
+  display: inline-block;}
+
+.drop:hover > .dropbutton {
+  width: 93vw;}
+
+.drop a {
+  color: whitesmoke;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;}
+
+.container-button {
+  display: none;
+  text-decoration: none;
+  background-color: rgb(35, 111, 141);
+  min-width: 218px;
+  z-index: 1;
+  width: 50vw;}
+
+.drop:hover .container-button {
+  display: block;
+  width: 93vw;}
+}
