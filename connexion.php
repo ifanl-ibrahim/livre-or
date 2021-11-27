@@ -18,6 +18,7 @@
             <li><a href="./index.php">Home</a></li>
             <li><a href="./inscription.php">Inscription</a></li>
             <li><a href="./connexion.php">Connexion</a></li>
+            <li><a href='./livre-or.php'>Livre D’OR</a></li>
         </ul>
     </nav>
 
@@ -28,6 +29,7 @@
                 <a href="./index.php">Home</a>
                 <a href="./inscription.php">Inscription</a>
                 <a href="./connexion.php">Connexion</a>
+                <a href='./livre-or.php'>Livre D’OR</a>
             </div>
         </div>
 </header>
@@ -62,6 +64,11 @@
                 }
                 else  echo $erreur = "<p id='erreur'>Le login ou le mot de passe n'est pas correct !</p>";
             }
+        }
+
+        if (isset($_SESSION['login'])) {
+            $login_session = $_SESSION['login'];
+            header ("location:index.php");
         }
     ?>
 

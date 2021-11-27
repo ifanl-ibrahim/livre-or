@@ -44,6 +44,8 @@ $oui="";
             <li><a><img id="logo-navbar" src="./images/avatar_livre.png"></a></li>
             <li><a href="./index.php">Home</a></li>
             <li><a href='./profil.php'>House</a></li>
+            <li><a href='./commentaire.php'>Écrit nous</a></li>
+            <li><a href='./livre-or.php'>Livre D’OR</a></li>
         </ul>
     </nav>
 
@@ -53,6 +55,8 @@ $oui="";
             <div class="container-button">
                 <a href="./index.php">Home</a>
                 <a href='./profil.php'>House</a>
+                <a href='./commentaire.php'>Écrit nous</a>
+                <a href='./livre-or.php'>Livre D’OR</a>
             </div>
         </div>
 </header>
@@ -75,7 +79,7 @@ $oui="";
                     exit();
                 }
                 else echo "<h3>Bienvenue sur ton profil $login</h3>";
-        ?>
+            ?>
         </section>
         <form action="#" method="POST">
             <p>Info</p>

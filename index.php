@@ -22,6 +22,7 @@ session_start();
             <?php
                 if (isset($_SESSION['login'])) {
                     echo "<li><a href='./profil.php'>House</a></li>";
+                    echo "<li><a href='./commentaire.php'>Écrit nous</a></li>";
                 }
                 else {
                     echo "<li><a href='inscription.php'>Inscription</a></li>";
@@ -40,6 +41,7 @@ session_start();
                 <?php
                 if (isset($_SESSION['login'])) {
                     echo "<a href='./profil.php'>House</a>";
+                    echo "<a href='./commentaire.php'>Écrit nous</a>";
                 }
                 else {
                     echo "<a href='inscription.php'>Inscription</a>";

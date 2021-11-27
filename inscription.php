@@ -46,6 +46,9 @@
     <section class="erreur">
         <?php
         session_start();
+        if (isset($_SESSION['login'])) {
+            $login_session = $_SESSION['login'];
+            header ("location:index.php");}
 
         $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
 

@@ -14,7 +14,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shorcut icon" href="./images/avatar_livre.png">
     <link href="https : //fonts.googleapis.com/css2? family= Abril+Fatface & display=swap" rel="stylesheet">
-    <title>MyProfil</title>
+    <title>Livre D’OR</title>
 </head>
 <body>
 
@@ -23,7 +23,17 @@ $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
         <ul>
             <li><a><img id="logo-navbar" src="./images/avatar_livre.png"></a></li>
             <li><a href="./index.php">Home</a></li>
-            <li><a href='./profil.php'>House</a></li>
+            <?php
+                if (isset($_SESSION['login'])) {
+                    echo "<li><a href='./profil.php'>House</a></li>";
+                    echo "<li><a href='./commentaire.php'>Écrit nous</a></li>";
+                }
+                else {
+                    echo "<li><a href='inscription.php'>Inscription</a></li>";
+                    echo "<li><a href='connexion.php'>Connexion</a></li>";
+                }
+            ?>
+            <li><a href='./livre-or.php'>Livre D’OR</a></li>
         </ul>
     </nav>
 
@@ -32,14 +42,61 @@ $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
             <button class="dropbutton"><img id="logo-navbar" src="./images/avatar_livre.png"></button>
             <div class="container-button">
                 <a href="./index.php">Home</a>
-                <a href='./profil.php'>House</a>
+                <?php
+                    if (isset($_SESSION['login'])) {
+                        echo "<a href='./profil.php'>House</a>";
+                        echo "<a href='./commentaire.php'>Écrit nous</a>";
+                    }
+                    else {
+                        echo "<a href='inscription.php'>Inscription</a>";
+                        echo "<a href='connexion.php'>Connexion</a>";
+                    }
+                ?>
+                <a href='./livre-or.php'>Livre D’OR</a>
             </div>
         </div>
 </header>
 
 <main>
+    <?php
+        if(isset($_SESSION['login'])){
+            $req="SELECT utilisateurs.login,`commentaire`,`date` FROM commentaires INNER JOIN utilisateurs ON utilisateurs.login='{$_SESSION['login']}'";
+            $query=mysqli_query($connexion,$req);
+            $results=mysqli_fetch_all($query);
+            foreach($results as $key=>$values){
+                foreach($values as $key=>$value){
+                    if($key==0){
+                        echo "<h5>Posté par: ".$value."</h5>";
+                    }
+                    if($key==1){
+                        echo "<h6>Commentaire: ".$value."</h6>";
+                    }
+                    if($key==2){
+                        echo "<h7>Posté le : ".$value."</h7>"."</br>";
+                    }
+                }
+            }
+        }
 
-
+        if(isset($_SESSION['login'])){
+            $req="SELECT utilisateurs.login,`commentaire`,`date` FROM commentaires LEFT OUTER JOIN utilisateurs ON utilisateurs.id=commentaires.id_utilisateur";
+            $query=mysqli_query($connexion,$req);
+            $results=mysqli_fetch_all($query);
+            foreach($results as $key=>$values){
+                foreach($values as $key=>$value){
+                    if($key==0){
+                        echo "<h5>Posté par: ".$value."</h5>";
+                    }
+                    if($key==1){
+                        echo "<h6>Commentaire: ".$value."</h6>";
+                    }
+                    if($key==2){
+                        echo "<h7>Posté le : ".$value."</h7>"."</br>";
+                    }
+                }
+            }
+        }
+    ?>
 </main>
 
 </body>
