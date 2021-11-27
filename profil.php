@@ -81,7 +81,7 @@ $oui="";
                 else echo "<h3>Bienvenue sur ton profil $login</h3>";
             ?>
         </section>
-        <form action="#" method="POST">
+        <form class="profil" action="#" method="POST">
             <p>Info</p>
 
                 <!-- UPDATE -->
@@ -91,8 +91,8 @@ $oui="";
                 //zone de modif//
 
                 if (isset($_POST['modifier'])) {
-                    $modification =    "Modifier le Login cliquer <input type=\"submit\" name=\"modifierlogin\" value=\"ici\"><br>
-                                        Modifier le Mot de passe cliquer <input type=\"submit\" name=\"modifierpass\" value=\"ici\"><br>";
+                    $modification =    "<p id= modif>Modifier le Login <input type=\"submit\" name=\"modifierlogin\" value=\"ici\"><br>
+                                        Modifier le Mot de passe <input type=\"submit\" name=\"modifierpass\" value=\"ici\"></p><br>";
                 }
 
                 //modif login//
@@ -188,7 +188,7 @@ $oui="";
                     header("Refresh:2"); 
                     }
             ?>
-            <p>↓ Modifier tes information ici ↓<input type="submit" name="modifier" value="Modifier"></p>
+            <input type="submit" name="modifier" value="Modifier vos information">
             <p><?php echo $modification ?></p>
             <p><?php echo $formNewLogin ?></p>
             <p><?php echo $formNewPass ?></p>
@@ -197,7 +197,7 @@ $oui="";
             <p><?php echo $valide ?></p>
             <p><?php echo $vide ?></p>
             <p><?php echo $wrong ?></p>
-            <p>↓ Supprimer votre compte ici ↓<input type="submit" name="supprimer" value="Supprimer"></p>
+            <input type="submit" name="supprimer" value="Supprimer votre compte">
             <p><?php  echo $delete   ?></p>
             <p><?php  echo $oui   ?></p>
             <input type="submit" name="deco" value="Déconnexion">

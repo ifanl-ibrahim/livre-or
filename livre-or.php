@@ -72,26 +72,26 @@ $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
                         echo "<h6>Commentaire: ".$value."</h6>";
                     }
                     if($key==2){
-                        echo "<h7>Posté le : ".$value."</h7>"."</br>";
+                        echo "<h7>Posté le : $value </h7></hr>";
                     }
                 }
             }
-        }
 
-        if(isset($_SESSION['login'])){
-            $req="SELECT utilisateurs.login,`commentaire`,`date` FROM commentaires LEFT OUTER JOIN utilisateurs ON utilisateurs.id=commentaires.id_utilisateur";
-            $query=mysqli_query($connexion,$req);
-            $results=mysqli_fetch_all($query);
-            foreach($results as $key=>$values){
-                foreach($values as $key=>$value){
-                    if($key==0){
-                        echo "<h5>Posté par: ".$value."</h5>";
-                    }
-                    if($key==1){
-                        echo "<h6>Commentaire: ".$value."</h6>";
-                    }
-                    if($key==2){
-                        echo "<h7>Posté le : ".$value."</h7>"."</br>";
+            if(!$_SESSION['login']){
+                $req="SELECT utilisateurs.login,`commentaire`,`date` FROM commentaires LEFT OUTER JOIN utilisateurs ON utilisateurs.id=commentaires.id_utilisateur";
+                $query=mysqli_query($connexion,$req);
+                $results=mysqli_fetch_all($query);
+                foreach($results as $key=>$values){
+                    foreach($values as $key=>$value){
+                        if($key==0){
+                            echo "<h5>Posté par: ".$value."</h5>";
+                        }
+                        if($key==1){
+                            echo "<h6>Commentaire: ".$value."</h6>";
+                        }
+                        if($key==2){
+                            echo "<h7>Posté le : ".$value."</h7>"."</hr>";
+                        }
                     }
                 }
             }

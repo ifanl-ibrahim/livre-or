@@ -52,6 +52,9 @@ session_start();
             </div>
         </div>
 </header>
+<main class="index">
+    <img src="./images/avatar_livre.png" alt="logo">
+</main>
 
 </body>
 </html>

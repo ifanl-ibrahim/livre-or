@@ -35,7 +35,7 @@
 </header>
 
 <main>
-    <form method="post">
+    <form id= general method="post">
     <h1>Inscription</h1>
     <input type="text" placeholder="Login" name="login" required><br/>
     <input type="password" placeholder="Mot de passe" name="password" required><br/>

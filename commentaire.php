@@ -53,7 +53,7 @@ if (!$connexion) {
 <main>
     <?php
         if(isset($_SESSION['login'])){
-            echo "<form action=# method='get'>
+            echo "<form id= general action=# method='get'>
             <textarea id='commentaire' name='commentaire' placeholder='Entrée vore commentaire'></textarea>
             <input type='submit' value='envoyer le commentaire' name='submit'>
             </form>";
@@ -66,7 +66,7 @@ if (!$connexion) {
 
             $date=date("Y/m/d H:i:s");
             $req="INSERT INTO `commentaires`(`commentaire`,`id_utilisateur`,`date`) VALUES ('{$commentaire}','{$_SESSION['id']}','{$date}')";
-            $query=mysqli_query($db,$req);
+            $query=mysqli_query($connexion,$req);
             }
         }
     ?>

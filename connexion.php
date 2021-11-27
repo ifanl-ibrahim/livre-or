@@ -37,7 +37,7 @@
 <main>
     <!-- zone de connexion -->
             
-    <form action="#" method="POST">
+    <form id= general action="#" method="POST">
         <h1>Connexion</h1>
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="login" required>
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>

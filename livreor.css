@@ -2,36 +2,58 @@ body{
     background-image: url(./images/fond_livre.jpg);
     background-size: cover;}
 
-.logo{
+main img{
     display: flex;
-    justify-content: center;
-    margin-top: 15vh;
-    height: 65vh;
-}
+    border: 1vh solid;
+    margin-top: 13vh;
+    background-color: rgba(0, 183, 255, 0.336);
+    padding: 3vh;
+    width: 70vh;
+    height: 60vh;
+    margin-left: 55vh;}
 
 /*** Connexion ***/
 
-table{
-    display: inline-block;}
-
-form {
-    width: 80vh;
-    color:white;
+#general {
+    width: 60vh;
     border-radius: 10vh;
     background-color: rgba(255,255,255,0.5);
     display: flex;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+    margin: auto;
+    margin-top: 15vh;}
+
+.profil {
+    width: 55vh;
+    border-radius: 10vh;
+    background-color: rgba(255,255,255,0.5);
+    display: block;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 2vh;
+    text-align: center;}
+
+#modif {
+    background: #00000033;}
 
 /* inputs */
 
-input[type=text], input[type=password] {
+input[type=text] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 1.5vh;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 0.2vh solid #ccc;
     box-sizing: border-box;}
+
+input[type=password] {
+    width: 100%;
+    padding: 1.5vh;
+    display: inline-block;
+    border: 0.2vh solid #ccc;
+    box-sizing: border-box;
+    margin: 1vh;}
 
 /* style des buttons */
 
@@ -41,12 +63,14 @@ input[type=submit] {
     padding: 14px 20px;
     margin: 8px 0;
     cursor: pointer;
-    width: 50vh;}
+    width: 24vh;}
 
 input[type=submit]:hover {
     background-color: white;
     color: skyblue;
     border: 1px solid darkblue;}
+
+
 
 /*** Connexion ***/
 
@@ -95,11 +119,15 @@ li a {
     border: 10px;
     background-color: red;
     color: white ;
-    display: flex;
-    justify-content: center;
     width: fit-content;
     height: 4vh;
-    margin-left: 81vh;}
+    margin: auto;
+    margin-top: 3vh;}
+
+#commentaire {
+    margin: 3vh;
+    height: 15vh;
+    width: 45vh;}
 
 /*** Message ***/
 
