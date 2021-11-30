@@ -53,20 +53,25 @@ if (!$connexion) {
 <main>
     <?php
         if(isset($_SESSION['login'])){
+            // var_dump($_SESSION['id']);
             echo "<form id= general action=# method='get'>
             <textarea id='commentaire' name='commentaire' placeholder='Entrée vore commentaire'></textarea>
             <input type='submit' value='envoyer le commentaire' name='submit'>
             </form>";
             if(isset($_GET['submit'])){
+
                 foreach ($_GET as $key=>$value) {
-                    if($key=="textarea"){
+                    if($key=="commentaire"){
                         $commentaire=$value;
                     }
+                $idTab = $_SESSION['id'];
+                $id = $idTab['id'];
+                $date=date("Y/m/d H:i:s");
+                $req="INSERT INTO `commentaires`(`commentaire`,`id_utilisateur`,`date`) VALUES ('$commentaire',$id,'$date')";
+                // var_dump($req);
+                $query=mysqli_query($connexion,$req);
+                    header("location: livre-or.php");
                 }
-
-            $date=date("Y/m/d H:i:s");
-            $req="INSERT INTO `commentaires`(`commentaire`,`id_utilisateur`,`date`) VALUES ('{$commentaire}','{$_SESSION['id']}','{$date}')";
-            $query=mysqli_query($connexion,$req);
             }
         }
     ?>

@@ -56,11 +56,18 @@
                 $req = "SELECT count(*) FROM utilisateurs WHERE login = '$login' AND password='$password'";
                 $req2 = mysqli_query($connexion,$req);
                 $res = mysqli_fetch_array($req2);
+
+                $id = "SELECT `id`FROM `utilisateurs` WHERE login = '$login' ";
+                $id2 = mysqli_query($connexion,$id);
+                $id_res = mysqli_fetch_assoc($id2);
+                $_SESSION['id'] = $id_res;
+        
                 $count = $res['count(*)'];
             
-                if($count!=0) {  
+                if($count!=0) {
                     $_SESSION['login'] = $login;
-                    header("location: profil.php");
+
+                header("location: profil.php");
                 }
                 else  echo $erreur = "<p id='erreur'>Le login ou le mot de passe n'est pas correct !</p>";
             }
