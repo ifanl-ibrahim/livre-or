@@ -205,5 +205,9 @@ $oui="";
     </article>
 </main>
 
+<footer>
+    <a href="https://github.com/ifanl-ibrahim/livre-or"><img src="./images/masterhacks_github_actualiza_politicas_eliminar_codigos_poc-removebg-preview (1).png" alt="logo"></a>
+</footer>
+
 </body>
 </html>
